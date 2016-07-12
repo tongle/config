@@ -73,7 +73,7 @@ autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
 func SetTitle()  
         "如果文件类型为.sh文件  
         if &filetype == 'python'  
-                call setline(1, "\#/usr/bin/env python")  
+                call setline(1, "\#!/usr/bin/env python")  
                 call setline(2, "\# -*- coding: utf8 -*-")  
                 call setline(3, "")  
                 call setline(4, "\# @Author: tongle")  
