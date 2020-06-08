@@ -1,26 +1,44 @@
-"~/.vimrc (configuration file for vim only)
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
-"vundle begin
-filetype off                   " required!
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'gmarik/vundle'
-Bundle 'tomasr/molokai'
-Bundle 'taglist.vim'
-Bundle 'Tagbar'
-Bundle 'The-NERD-tree'
-Bundle 'The-NERD-Commenter'
-Bundle 'snipMate'
-Bundle 'Pydiction'
-Bundle 'vim-airline/vim-airline'
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tomasr/molokai'
+Plugin 'taglist.vim'
+Plugin 'Tagbar'
+Plugin 'The-NERD-tree'
+Plugin 'The-NERD-Commenter'
+Plugin 'snipMate'
+Plugin 'Pydiction'
+Plugin 'vim-airline/vim-airline'
 
-Bundle 'pythoncomplete'
-Bundle 'pyflakes.vim'
-"Bundle 'Pydiction'
+Plugin 'pythoncomplete'
+Plugin 'pyflakes.vim'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+" git repos on your local machine (i.e. when working on your own plugin)
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
 
-filetype plugin indent on     " required!
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+
 filetype plugin on
 autocmd FileType python setlocal et sta sw=4 sts=4
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -43,7 +61,8 @@ map <C-l> <c-w>w
 imap <C-l> <ESC> <c-w>w
 
 "set mouse=a
-set nu
+set noswapfile
+"set nu
 set nobackup
 color molokai
 set hlsearch
@@ -56,30 +75,41 @@ autocmd FileType python set cul cuc colorcolumn=81
 
 "autocmd BufNewFile *.py 0r /Users/tongle/workspace/templates/python_header.template
 
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
 syn on
 set laststatus=2
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let g:tagbar_ctags_bin='/usr/bin/ctags'
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+"set tags+=/home/tongle/workspace/tags
+set tags=./tags,tags;
 
 autocmd BufReadPost *
     \ if line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal g`\"" |
     \ endif
-autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"                                                                                                
-"新建.py,.cc,.java,.sh,  
-""定义函数SetTitle，自动插入文件头  
-func SetTitle()  
-        "如果文件类型为.sh文件  
-        if &filetype == 'python'  
-                call setline(1, "\#!/usr/bin/env python")  
-                call setline(2, "\# -*- coding: utf8 -*-")  
-                call setline(3, "")  
-                call setline(4, "\# @Author: tongle")  
-                call setline(5, "\# Created Time : ".strftime("%FT%T%z"))  
-                call setline(6, "")  
-                call setline(7, "\# File Name: ".expand("%"))  
-        endif  
+autocmd BufNewFile *.py,*.cc,*.sh,*.java exec ":call SetTitle()"
+func SetTitle()
+        if &filetype == 'python'
+                call setline(1, "\#!/usr/bin/env python")
+                call setline(2, "\# -*- coding: utf8 -*-")
+                "call setline(3, "")
+                "call setline(4, "\# @Author: tongle")
+                "call setline(5, "\# Created Time : ".strftime("%FT%T%z"))
+                "call setline(6, "")
+                "call setline(7, "\# File Name: ".expand("%"))
+        endif
 endfunc
 autocmd BufNewFile * normal G
+if has("gui_runing")              "如果在图形用户界面
+    set background=light          "设置背景色为亮色
+else                              "设置背景色为深色
+	set background=dark           "就开启256色支持，默认为8色
+	set t_Co=256
+endif
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap ' ''<ESC>i
+inoremap " ""<ESC>i
+highlight WhitespaceEOL ctermbg=red guibg=red 
+match WhitespaceEOL /\s\+$/
