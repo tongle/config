@@ -1,0 +1,28 @@
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/dags$ cd /opt/airflow/logs/dag_id=poolset_isolation/
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation$ ls
+'run_id=manual__2023-09-15T01:23:22+00:00'         'run_id=manual__2023-09-15T02:06:56.071950+00:00'  'run_id=manual__2023-09-15T02:16:13.557868+
+'run_id=manual__2023-09-15T01:29:11.263325+00:00'  'run_id=manual__2023-09-15T02:11:22+00:00'         'run_id=manual__2023-09-15T02:20:49.232613+
+'run_id=manual__2023-09-15T01:32:35.129432+00:00'  'run_id=manual__2023-09-15T02:14:36.456592+00:00'  'run_id=manual__2023-09-15T02:24:22+00:00'
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation$ cd run_id=manual__2023-09-15T02:24:22+00:00
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00$ ls
+'task_id=print_the_context'
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00$ cd task_i
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=pr
+'attempt=1.log'
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=prpt\=1.log
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=pr
+'attempt=1.log'
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=prirflow/dags/
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/dags$ ls
+__pycache__  accesser_instance_weight.py  accesser_node_weight.py  airflow_dags.py  poolset_isolation.py
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/dags$ vim poolset_isolation.py
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/dags$ cd -
+/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=print_the_context
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=pr
+'attempt=1.log'
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=prpt\=1.log
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=pr
+'attempt=1.log'
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:0            airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00/task_id=pr
+airflow@airflow-worker-deployment-5d88db55cb-m9l58:/opt/airflow/logs/dag_id=poolset_isolation/run_id=manual__2023-09-15T02:24:22+00:00$ ls
+'task_id=print_the_context'
